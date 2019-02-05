@@ -1,0 +1,36 @@
+.programa
+    .contenedor-programa
+        margin: 20px 5px
+        .principal
+            width: 70%
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            align-items: center
+            margin: 20px auto
+            .icono
+                margin: 0px 20px
+                text-align: center
+                .titIcon
+                    font-weight: 600
+                    font-size: 25px
+            .texto
+                p
+                    text-align: justify                 
+        .tematicas
+            display: flex
+            justify-content: center
+            flex-wrap: wrap   
+            &:hover
+                .card
+                    opacity: .7
+            .card
+                transition: all ease .5s
+                cursor: pointer
+                margin: 20px
+                &:hover
+                    opacity: 1 !important
+                    transform: scale(1.15)
+                ul
+                    li
+                        list-style-image: url(check.png)

@@ -1,0 +1,62 @@
+.nuestrosPrincipios
+    .contenedor-nuestrosPrincipios
+        .titulo-resumen
+            .titulo
+                @extend .titulos
+            .resumen
+                text-align: center
+        .principios
+            margin: 10px 30px
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            .tarjeta
+                width: 550px
+                margin: 10px 15px
+                display: flex
+                align-items: center
+                .texto
+                    .titulo
+                        font-weight: 500
+                        font-size: 20px
+                        margin: 0px
+                .imagen
+                    img
+                        border-radius: 4px
+                        
+                    
+@media screen and (max-width: 625px)
+    .tarjeta
+        flex-wrap: wrap
+        justify-content: center
+
+@media screen and (max-width: 355px)
+    .tarjeta
+        img
+            width: 100%
+   
+   
+
+.nuestrosValores
+    margin: 20px 10px
+    .titulo
+            @extend .titulos
+    .contenedor-nuestrosValores
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        align-items: center
+        .valores, .imagen
+            margin: 0px 15px
+            ul   
+                li
+                    list-style-image: url(check.png)
+                    font-size: 20px          
+        .imagen
+            img
+                border-radius: 6px
+
+
+
+
+

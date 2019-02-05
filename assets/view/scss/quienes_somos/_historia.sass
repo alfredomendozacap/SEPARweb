@@ -1,0 +1,38 @@
+.historia
+    .titulo
+        @extend .titulos
+    .contenedor-historia
+        display: flex
+        .lista
+            background: red
+            margin-right: 10px
+            width: 20%
+            ol
+                li
+                    margin-bottom: 10px
+                    line-height: 15px
+                    a
+                        color: $color-enlace 
+                        font-weight: 600
+                        font-size: 18px    
+        .capitulos
+            width: 80%
+            .capitulo
+                margin-bottom: 60px
+                .titCapitulo
+                    font-weight: 600
+                    font-size: 20px
+                    text-align: center
+                .contenido
+                    .parrafo
+                        .imgPrin, .imgSecun
+                            float: left
+                            margin: 0px 10px
+                            box-shadow: 0px 0px 10px #000
+                        .imgSecun
+                            float: right
+                        p
+                            text-align: justify
+                        .subtitulo
+                            font-weight: 600
+                            margin-bottom: 0px

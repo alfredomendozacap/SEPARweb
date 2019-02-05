@@ -1,0 +1,140 @@
+.contactanos
+    background: url(../img/contacto/pictures/oriental.png)
+    margin: -10px 0px
+.contacto
+    .texto
+        display: flex
+        flex-direction: column
+        margin: 10px 20px
+        text-align: center
+        font-weight: 500      
+        .titulo
+            font-weight: bolder
+            font-size: 30px
+            margin-bottom: 0px
+    .contenedor-contacto
+        display: flex
+        justify-content: center
+        .contenedor-formulario
+            width: 500px
+            margin: 0px 20px
+            padding: 10px 20px
+            background: url(../img/contacto/pictures/form-img.jpg)
+            background-size: cover
+            background-position: center 0
+            border-radius: 6px
+            h1
+                font-weight: bolder
+                font-size: 35px 
+            hr
+                background: #fff
+                box-shadow: 0px 0px 5px #000
+            form
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                flex-wrap: wrap       
+                .inputIcono
+                    position: relative
+                    width: 90%
+                    i
+                        position: absolute
+                        left: 0
+                        top: 12px
+                        padding: 9px 8px
+                        color: #737373
+                        transition: 0.3s
+                    textarea
+                        // max-height: 200px
+                        // min-height: 200px
+                    input[type="text"], textarea
+                        width: 100%
+                        border: 2px solid #aaa
+                        border-radius: 4px
+                        margin: 8px 0
+                        outline: none
+                        padding: 8px
+                        box-sizing: border-box
+                        transition: 0.3s
+                        padding-left: 40px
+                        background: rgba(#fff, 0.6)
+                        &:focus
+                            border-color: $color-verde
+                            box-shadow: 0 0 12px 0 $color-verde 
+                        &:focus + i
+                            color: $color-verde
+
+.equipoSEPAR
+    .contenedor-equipoSEPAR >
+        margin: 20px 
+        p
+            text-align: center
+            font-weight: bolder
+            font-size: 30px
+            margin-top: 30px
+            margin-bottom: -18px
+        hr
+            width: 80%
+            border: solid 1px #959595
+        .contenedor-tarjetas
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            .tarjeta
+                display: flex
+                align-items: center
+                margin: 5px 15px
+                .foto
+                    text-align: center
+                    img
+                        border-radius: 50%     
+                    .nombre-cargo
+                        text-align: center
+                        .nombre
+                            margin-bottom: -8px
+                        .cargo
+                            font-weight: bolder
+                .info
+                    ul
+                        li
+                            list-style-image: url(check.png)
+                            transition: all esase .5s
+                            cursor: pointer
+                            &:hover
+                                color: $color-verde
+
+.ubicacion
+    margin: 15px 0px
+    .contenedor-ubicacion
+        .info >
+            p
+                font-size: 30px
+                font-weight: bolder
+                text-align: center
+            .contenedor-info
+                display: flex
+                justify-content: space-around
+                align-items: center
+                flex-wrap: wrap
+                .direccion
+                    text-align: center
+                    font-size: 20px
+                    .calle, .telefono
+                        margin-bottom: -10px
+                .horarios
+                    .titulo
+                        text-align: center
+                        font-weight: bolder
+                    .contenedor-horarios
+                        text-align: center
+                        font-size: 20px
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: space-around
+                        div
+                            margin: 0px 15px
+                            .dias
+                                margin-bottom: -10px
+        .mapa
+            margin-bottom: -21px

@@ -1,0 +1,28 @@
+@import "../css/estilos.css";
+
+// ESTILOS FILOSOFIA INSTITUCIONAL
+@import "extends";
+@import "filosofia/mision-vision";
+@import "filosofia/principiosValores";
+@import "filosofia/enfoques";
+
+// ESTILOS QUIENES SOMOS
+@import "quienes_somos/historia";
+
+// ESTILOS ORGANIZACION
+@import "organizacion/estructura";
+
+// ESTILOS PROGRAMAS
+@import "programas/programas";
+
+// ESTILOS PUBLICACIONES
+@import "publicaciones/proyectos";
+@import "publicaciones/publicaciones";
+
+// ESTILOS CONTACTO
+@import "contacto/contacto";
+
+@import "main/colorTheme";
+@import "main/error";
+@import "main/summary";
+@import "main/news";

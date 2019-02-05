@@ -1,0 +1,44 @@
+/*ESTILOS SECCION NOTICIA COMPLETA*/
+
+.main__separ{
+    .news__alert{
+        font-size: 5em;
+        @media screen and (max-width: 480px) {
+            font-size: 2.5em;
+        }  
+    }
+    .news__title{
+        font-size: 3em;
+        @media screen and (max-width: 350px) {
+            font-size: 2em;
+        }    
+    }
+    .news__date{
+        font-size: 1.3em;
+        @media screen and (max-width: 350px) {
+            font-size: 1em;
+        } 
+    }
+    figure{
+        height: 400px;
+    }
+    .news__content{
+        font-size: 1.2em;
+        line-height: 20px;
+    }
+}
+
+#carouselsecondaryImages{
+    .img-secondary{
+        height: 350px;
+    }
+    .img__carousel{
+        cursor: zoom-in;
+        object-fit: cover;
+        transition: transform .3s ease;
+        &:hover{
+            transform: scale(1.2);
+            opacity: .8;
+        }
+    }
+}

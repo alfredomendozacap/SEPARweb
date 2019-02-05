@@ -1,0 +1,58 @@
+.proyectos
+    .titulos 
+        @extend .titulos
+    .target
+        margin: 10px 15px
+        .imagen
+            overflow: hidden
+            img
+                width: 100%
+                object-fit: cover
+                vertical-align: top
+                transition: all 1s ease
+                &:hover
+                    transform: scale(1.3)
+        .informacion
+            margin: 0px 5px
+            .titulo
+                font-weight: bolder
+                font-size: 20px
+                margin-bottom: -13px
+            hr
+                border: solid 1px #A9A9A9
+            .contenedor-informacion
+                margin-top: -13px   
+                p
+                    text-align: justify
+                    line-height: 20px     
+                    font-weight: 300
+                    a
+                        font-weight: 600
+                        color: #6d6d6d
+                        text-transform: uppercase
+                        transition: all ease .5s
+                        cursor: pointer
+                        &:hover
+                            color: $color-verde
+                        
+                .proyecto
+                    text-align: center
+                    margin: 0px 8px
+                    a
+                        font-weight: bolder
+                        color: #007bff
+                        display: block
+                    img
+                        transition: all ease .5s
+                        cursor: pointer
+                        &:hover
+                            transform: scale(1.15)
+                            
+                        
+
+
+@media screen and (max-width: 1000px)
+    .informacion
+        .titulo
+            text-align: center
+            line-height: 22px

@@ -1,0 +1,84 @@
+.enfoques
+    padding: 10px 20px
+    .titulo
+        @extend .titulos
+    .contenedor-enfoques
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        .enfoque
+            cursor: pointer
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin: 0px 15px
+            margin-bottom: -85px
+            &:hover
+                .imagen
+                    img
+                        transform: scale(1.5)
+            .imagen
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+                overflow: hidden
+                width: 290px
+                height: 290px
+                img
+                    object-fit: cover
+                    background-size: cover
+                    filter: blur(1px)
+                    transition: all ease .5s
+                    
+            .texto
+                position: relative
+                top: -190px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+            .texto >
+                p 
+                    color: #fff
+                    font-weight: 800
+                    font-size: 23px
+                    line-height: 23px
+                    text-align: center
+                a
+                    color: #fff
+                    border: solid 3px #fff
+                    padding: 3px 40px
+                    font-weight: 600
+                    font-size: 20px
+                    transition: all ease .5s
+                    &:hover
+                        border-radius: 10px
+
+            .modal
+                .sociales-modal
+                    a
+                        i
+                            transition: all ease .5s
+                            &:hover
+                                transform: scale(1.5)
+.img-enfoques
+    width: 100%
+    object-fit: cover
+    background-position: cover
+    img
+        width: 100%
+
+
+@media screen and (max-width: 320px)
+    .enfoques
+        .contenedor-enfoques
+            .enfoque
+                .imagen
+                    width: 250px
+                    height: 250px
+                .texto
+                    top: -175px
+    
+
+
+
