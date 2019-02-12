@@ -1,3 +1,7 @@
+<?php
+    $pathMenu = ($_GET['page'] === 'news') ? '../' : '' ;
+    $pathResource = ($_GET['page'] === 'news') ? '../assets/' : 'assets/' ;
+?>
 <!DOCTYPE html>
 <html lang="es-PE">
 <head>
@@ -10,8 +14,9 @@
     <!-- FUENTE DE TEXTO -->
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/view/css/style.css">
+    <link rel="stylesheet" href="<?php echo $pathResource;?>view/css/style.css">
 
     <title>SEPAR</title>
 </head>
 <body>
+

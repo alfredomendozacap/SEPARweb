@@ -10,13 +10,13 @@
                 <!-- ------------- LOGO - SOCIALES -------------  -->
                 <div class="row align-items-center justify-content-between">
                     <div class="sociales col-lg-3 text-lg-left text-center">
-                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="assets/view/img/facebook_108044.png" alt="" width="55">
-                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="assets/view/img/youtube_108041.png" alt="" width="55">
-                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="assets/view/img/instagram_108043.png" alt="" width="55">
-                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="assets/view/img/whatsapp_108042.png" alt="" width="55">
+                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="<?php echo $pathResource?>view/img/facebook_108044.png" alt="" width="55">
+                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="<?php echo $pathResource?>view/img/youtube_108041.png" alt="" width="55">
+                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="<?php echo $pathResource?>view/img/instagram_108043.png" alt="" width="55">
+                        <img class="d-none mx-lg-0 d-md-inline mx-md-5" src="<?php echo $pathResource?>view/img/whatsapp_108042.png" alt="" width="55">
                     </div>
                     <div class="logo col-lg-6 my-2 text-center">
-                        <img src="assets/view/img/main/icons/LogoSepar.png" alt="" width="250">
+                        <img src="<?php echo $pathResource?>view/img/main/icons/LogoSepar.png" alt="" width="250">
                     </div>
                     <div class="blanco col-lg-3">
                         <!-- <form class="form-inline w-100 row">
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto d-flex justify-content-between ">
                 <li class="nav-item mx-xl-3">
-                    <a class="nav-link text-white" href="main">INICIO <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="<?php echo $pathMenu?>main">INICIO <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown  mx-xl-3">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -50,13 +50,13 @@
                         FILOSOFÍA INSTITUCIONAL
                     </a>
                     <div class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="mision-vision">Misión y
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>mision-vision">Misión y
                             Visión</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="principios-valores#principios">Nuestros
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>principios-valores#principios">Nuestros
                             Principios</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="principios-valores#valores">Nuestros
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>principios-valores#valores">Nuestros
                             Valores</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="enfoques">Nuestros
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>enfoques">Nuestros
                             Enfoques</a>
                     </div>
                 </li>
@@ -66,12 +66,12 @@
                         QUIENES SOMOS
                     </a>
                     <div class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" text-white href="quienes-somos">Historia
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" text-white href="<?php echo $pathMenu?>quienes-somos">Historia
                             Institucional</a>
                     </div>
                 </li>
                 <li class="nav-item  mx-xl-3">
-                    <a class="nav-link text-white" href="estructura" tabindex="-1" aria-disabled="true">ORGANIZACIÓN</a>
+                    <a class="nav-link text-white" href="<?php echo $pathMenu?>estructura" tabindex="-1" aria-disabled="true">ORGANIZACIÓN</a>
                 </li>
                 <li class="nav-item dropdown  mx-xl-3">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -79,11 +79,11 @@
                         PROGRAMAS
                     </a>
                     <div class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="inclusion-social-politica">Inclusión
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>inclusion-social-politica">Inclusión
                             Social y Política</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="competitividad-territorial">Competitividad
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>competitividad-territorial">Competitividad
                             Territorial</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="cambio-climatico-gestion-ambiental">Cambio
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>cambio-climatico-gestion-ambiental">Cambio
                             Climático y Gestión Ambiental</a>
                     </div>
                 </li>
@@ -93,17 +93,17 @@
                         PUBLICACIONES
                     </a>
                     <div class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="proyectos">Nuestros
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>proyectos">Nuestros
                             Proyectos</a>
-                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="publicaciones">Nuestras
+                        <a class="dropdown-item bg-success text-white font-weight-bolder" href="<?php echo $pathMenu?>publicaciones">Nuestras
                             Publicaciones</a>
                     </div>
                 </li>
                 <li class="nav-item  mx-xl-3">
-                    <a class="nav-link text-white" href="servicios">SERVICIOS<span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="<?php echo $pathMenu?>servicios">SERVICIOS<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mx-xl-3">
-                    <a class="nav-link text-white" href="contacto">CONTACTO<span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="<?php echo $pathMenu?>contacto">CONTACTO<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
