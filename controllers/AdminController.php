@@ -8,17 +8,24 @@
  */
 class AdminController
 {
+    public function login()
+    {
+        require_once 'views/admin/login.php';        
+        require_once 'views/admin/scripts.php';
+    }
     public function dashboard()
     {
         require_once 'views/admin/bars.php';
         require_once 'views/admin/dashboard.php';
         require_once 'views/admin/footer.php';
+        require_once 'views/admin/scripts.php';
     }
     public function publish()
     {        
         require_once 'views/admin/bars.php';
         require_once 'views/admin/publish.php';
         require_once 'views/admin/footer.php';
+        require_once 'views/admin/scripts.php';
     }
     // SECCIÓN DE FORMULARIO PARA PUBLICAR
     public function crearNoticia()

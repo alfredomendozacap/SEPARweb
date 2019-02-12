@@ -1,6 +1,6 @@
 <?php
-    $pathMenu = ($_GET['page'] === 'news') ? '../' : '' ;
-    $pathResource = ($_GET['page'] === 'news') ? '../assets/' : 'assets/' ;
+    $pathMenu = (isset($_GET['page']) && $_GET['page'] === 'news') ? '../' : '' ;
+    $pathResource = (isset($_GET['page']) && $_GET['page'] === 'news') ? '../assets/' : 'assets/' ;
 ?>
 <!DOCTYPE html>
 <html lang="es-PE">

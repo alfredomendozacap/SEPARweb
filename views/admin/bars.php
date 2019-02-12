@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 
 <head>
     <meta charset="utf-8">
@@ -20,16 +20,15 @@
     <link href="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!--This page css - Morris CSS -->
     <link href="assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <!-- DROPIFY -->
+    <link rel="stylesheet" href="assets/plugins/dropify/dist/css/dropify.min.css">
+    <!-- SWEET ALERT -->
+    <script src="assets/plugins/sweetalert2/sweetalert2.all.js"></script>
     <!-- Custom CSS -->
     <link href="assets/admin/css/style.css" rel="stylesheet">
     <!-- TEMA PRINCIPAL -->
     <link href="assets/admin/css/colorTheme.css" id="theme" rel="stylesheet">
-    <!-- DROPIFY -->
-    <link rel="stylesheet" href="assets/plugins/dropify/dist/css/dropify.min.css">
 
-    <!-- SWEET ALERT -->
-    <script src="assets/plugins/sweetalert2/sweetalert2.all.js"></script>
-    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

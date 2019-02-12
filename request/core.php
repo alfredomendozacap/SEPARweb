@@ -21,10 +21,9 @@ class Core{
 			'proyectos' => array('view' => 'proyectos', 'controller' => 'PublicacionesController'),
 			'publicaciones' => array('view' => 'publicaciones', 'controller' => 'PublicacionesController'),
 			'contacto' => array('view' => 'contacto', 'controller' => 'ContactoController'),
+			'login' => array('view' => 'login', 'controller' => 'AdminController'),
 			'dashboard' => array('model' => 'Admin','view' => 'dashboard', 'controller' => 'AdminController'),
-			'publish' => array('model' => 'Admin','view' => 'publish', 'controller' => 'AdminController'),
-			'login' => array('model' => 'User','view' => 'login', 'controller' => 'UserController'),
-			'register' => array('model' => 'User','view' => 'register', 'controller' => 'UserController')
+			'publish' => array('model' => 'Admin','view' => 'publish', 'controller' => 'AdminController')
 		);
 		
 		foreach ($data as $key => $components) {
