@@ -239,22 +239,9 @@
 .historia .contenedor-historia {
   display: flex;
 }
-.historia .contenedor-historia .lista {
-  background: red;
-  margin-right: 10px;
-  width: 20%;
-}
-.historia .contenedor-historia .lista ol li {
-  margin-bottom: 10px;
-  line-height: 15px;
-}
-.historia .contenedor-historia .lista ol li a {
-  color: #007bff;
-  font-weight: 600;
-  font-size: 18px;
-}
 .historia .contenedor-historia .capitulos {
-  width: 80%;
+  margin: auto;
+  width: 95%;
 }
 .historia .contenedor-historia .capitulos .capitulo {
   margin-bottom: 60px;

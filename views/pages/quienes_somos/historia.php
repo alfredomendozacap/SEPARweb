@@ -2,18 +2,7 @@
     <section class="historia">
         <p class="titulo">Historia Institucional</p>
         <div class="contenedor-historia">
-            <div class="lista">
-                <ol type="I">
-                    <li><a href="#">HISTORIA Y VICITUDES</a></li>
-                    <li><a href="#">LA BORRASCA Y EN EMBARQUE (1984-1986)</a></li>
-                    <li><a href="#">EN LA TORMENTA (1987-1992)</a></li>
-                    <li><a href="#">NUEVOS VIENTOS ALEJAN EL TEMPORAL(1993-1996)</a></li>
-                    <li><a href="#">LUCES Y SOMBRAS EN EL HORIZONTE (1997-1999)</a></li>
-                    <li><a href="#">ANCLAJE Y PLAN DE REANUDACIÓN DE LA TRAVESÍA (2000-2004)</a></li>
-                    <li><a href="#">EL VUELO DE ÁGUILA (2005-2009)</a></li>
-                    <li><a href="#">REPLANEAR EL HORIZONTE Y REMONTAR (2010-2013)</a></li>
-                </ol>
-            </div>
+            
             <div class="capitulos">
                 <div class="capitulo">
                     <p class="titCapitulo">SEPAR 2019</p>
