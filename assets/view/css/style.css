@@ -4,6 +4,7 @@
   font-size: 30px;
   font-weight: bolder;
   text-align: center;
+  margin: 10px 20px;
 }
 
 .mision-vision > .contenedor-mision-vision {
@@ -353,49 +354,49 @@
 .proyectos .target .imagen img:hover {
   transform: scale(1.3);
 }
-.proyectos .target .informacion {
+.proyectos .target .informacionSEPAR {
   margin: 0px 5px;
 }
-.proyectos .target .informacion .titulo {
+.proyectos .target .informacionSEPAR .titulo {
   font-weight: bolder;
   font-size: 20px;
   margin-bottom: -13px;
 }
-.proyectos .target .informacion hr {
+.proyectos .target .informacionSEPAR hr {
   border: solid 1px #A9A9A9;
 }
-.proyectos .target .informacion .contenedor-informacion {
+.proyectos .target .informacionSEPAR .contenedor-informacion {
   margin-top: -13px;
 }
-.proyectos .target .informacion .contenedor-informacion p {
+.proyectos .target .informacionSEPAR .contenedor-informacion p {
   text-align: justify;
   line-height: 20px;
   font-weight: 300;
 }
-.proyectos .target .informacion .contenedor-informacion p a {
+.proyectos .target .informacionSEPAR .contenedor-informacion p a {
   font-weight: 600;
   color: #6d6d6d;
   text-transform: uppercase;
   transition: all ease 0.5s;
   cursor: pointer;
 }
-.proyectos .target .informacion .contenedor-informacion p a:hover {
+.proyectos .target .informacionSEPAR .contenedor-informacion p a:hover {
   color: #28a745;
 }
-.proyectos .target .informacion .contenedor-informacion .proyecto {
+.proyectos .target .informacionSEPAR .contenedor-informacion .proyecto {
   text-align: center;
   margin: 0px 8px;
 }
-.proyectos .target .informacion .contenedor-informacion .proyecto a {
+.proyectos .target .informacionSEPAR .contenedor-informacion .proyecto a {
   font-weight: bolder;
   color: #007bff;
   display: block;
 }
-.proyectos .target .informacion .contenedor-informacion .proyecto img {
+.proyectos .target .informacionSEPAR .contenedor-informacion .proyecto img {
   transition: all ease 0.5s;
   cursor: pointer;
 }
-.proyectos .target .informacion .contenedor-informacion .proyecto img:hover {
+.proyectos .target .informacionSEPAR .contenedor-informacion .proyecto img:hover {
   transform: scale(1.15);
 }
 

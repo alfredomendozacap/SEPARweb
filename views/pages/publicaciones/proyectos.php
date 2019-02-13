@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -245,7 +245,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="informacion">
+                    <div class="informacionSEPAR">
                         <p class="titulo">Proyecto Pecuario - Manufacturero</p>
                         <hr>
                         <div class="contenedor-informacion">
