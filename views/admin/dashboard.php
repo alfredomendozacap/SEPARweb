@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <h1>Estas en el dashboard</h1>
+                <h1>Estas en el dashboard <?php echo $_SESSION['nombre']; ?></h1>
             </div>
         </div>
     </div>

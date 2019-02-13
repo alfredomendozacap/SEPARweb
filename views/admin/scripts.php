@@ -68,8 +68,8 @@
         });
     </script>
 
-    <?php if ($_GET['page'] == 'publish'): ?>
-        <script src="views/js/admin.js"></script>
+    <?php if ($_GET['page'] == 'login'): ?>
+        <!-- <script src="views/js/admin.js"></script> -->
     <?php endif; ?>
 
 </body>

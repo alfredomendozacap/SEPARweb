@@ -100,22 +100,22 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <!-- <img src="assets/images/users/1.jpg" alt="user" class="profile-pic"/> -->
-                                <button class="btn btn-lg btn-rounded btn-themecolor" type="button">Alfredo Angel</button>
+                                <button class="btn btn-lg btn-rounded btn-themecolor" type="button"><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></button>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-text">
-                                                <h4>Alfredo Mendoza</h4>
-                                                <p class="text-muted">kick-1930@hotmail.com</p>
+                                                <h4><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></h4>
+                                                <p class="text-muted"><?php echo $_SESSION['email']; ?></p>
                                             </div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-user"></i> Mi Perfil</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+                                    <li><a href="logout"><i class="fa fa-power-off"></i> Salir</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -138,7 +138,7 @@
                     <div class="profile-img"> <img style="opacity: .6" src="assets/images/browser/safari-logo.png" alt="brújula" /> </div>
                     <!-- User profile text-->
                     <div class="profile-text">
-                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Alfredo Mendoza</a>
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></a>
                     </div>
                 </div>
                 <!-- End User profile text-->
@@ -151,7 +151,7 @@
                         <li class="active"> <a class=" waves-effect waves-dark active" href="?page=dashboard"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
                         </li>
                         <li class="nav-devider"></li>
-                        <li class="active"> <a class=" waves-effect waves-dark active" href="publish"><i class="mdi mdi-newspaper"></i><span class="hide-menu">Nueva Noticia </span></a>
+                        <li class="active"> <a class=" waves-effect waves-dark active" href="publicar-noticia"><i class="mdi mdi-newspaper"></i><span class="hide-menu">Nueva Noticia </span></a>
                         </li>
                         
                          

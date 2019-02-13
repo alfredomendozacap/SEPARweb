@@ -1,28 +1,29 @@
 ;
+((d,w,c)=>{
+    d.addEventListener('submit',e => {
+        if (e.target.matches('form')) {
+            e.preventDefault()
+            alert('registrando..')
+            let data = new FormData(e.target)
+            for (let key of data.keys()) {
+                c(key)
+            }
+            for (let value of data.values()) {
+                c(value)
+            } 
 
-((d)=>{
-    const id = document.getElementById.bind(document)
-    const q = document.querySelector.bind(document)
-    const all = document.querySelectorAll.bind(document)
-    d.addEventListener('DOMContentLoaded', e =>{
-        let inputitle = id('title');
-        inputitle.addEventListener('change', () => {
-            let data = new FormData();
-            data.append('SameTitle', inputitle.value);
-            console.log(data.get('SameTitle'));
-            fetch('index.php',{
-                method: 'post',
+            fetch('./views/admin/login.php',{
                 body: data,
-                credentials: 'include'
+                method: 'post'
             })
-            .then( response => {
-                return response.json;
-            })
-            .then( datos => {
-                console.log(datos);
-            }).catch( error => {
-                console.log(error);
-            })
-        });
+                .then(res=>{
+                    return (res.ok)
+                        ? res.json()
+                        : Promise.reject({ status: res.status, statusText: res.statusText })
+                })
+                .then(res=>{
+                    c(res)
+                })
+        }
     })
-})(document);
+})(document,window,console.log)

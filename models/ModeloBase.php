@@ -93,9 +93,9 @@ class ModeloBase extends DB{
 
 			if ($stmt -> execute()) {
 				if (!$getAllRows) {
-					$return = ($stmt->rowCount() == 1) ? $stmt->fetch() : false;
+					$return = ($stmt->rowCount() == 1) ? $stmt->fetch(PDO::FETCH_ASSOC) : false;
 				}else{
-					$return = ($stmt->rowCount() >= 1) ? $stmt->fetchAll() : false;
+					$return = ($stmt->rowCount() >= 1) ? $stmt->fetchAll(PDO::FETCH_ASSOC) : false;
 				}
 			}else{
 				$return = false;

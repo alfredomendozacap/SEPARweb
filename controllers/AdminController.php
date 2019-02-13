@@ -2,6 +2,8 @@
 
     require_once 'models/News.php';
     require_once 'models/Images.php';
+    require_once 'models/Administrator.php';
+    require_once 'helpers/helps.php';
 
 /**
  * Controlador del Administrador
@@ -10,22 +12,101 @@ class AdminController
 {
     public function login()
     {
+        session_start();
+        session_destroy();
         require_once 'views/admin/login.php';        
         require_once 'views/admin/scripts.php';
     }
+    public function logout()
+    {
+        require_once 'views/admin/logout.php';        
+    }
+    // SECCIÓN DE FORMULARIO PARA INGRESAR AL DASHBOARD
+    public function signIn()
+    {
+        if (isset($_POST['ingresar'])) {
+
+            $userEmail = isset($_POST['userEmail']) ? ValidarCampo($_POST['userEmail']) : '';
+            $password = isset($_POST['password']) ? ValidarCampo($_POST['password']) : '';
+
+            if (preg_match('/^[^0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $userEmail)) {
+
+                $credencial = new Administrator();
+                $credencial -> setAdmin('email',$userEmail);
+                $respuesta = $credencial -> getCredentials(); 
+                
+                if (password_verify($password,$respuesta['password']) && $userEmail == $respuesta['email']) {
+                    echo '<div class="alert alert-success text-center">
+							Bienvenido al Dashboard.
+							</div>';
+                    session_start();
+                    $_SESSION['nombre'] = $respuesta['first_name'];
+                    $_SESSION['apellido'] = $respuesta['last_name'];
+                    $_SESSION['email'] = $respuesta['email'];
+                    $_SESSION['rol'] = $respuesta['rol'];
+                    header('Location: dashboard');
+                    die();
+                }else{
+                    // $_SESSION['error'] = "Usuario y contraseña";
+                    // header('Location: login');
+                    echo '<script type="text/javascript">
+						swal({
+							type: "error",
+							title: "¡El correo o la contraseña son incorrectos!",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+						}).then((result)=>{
+							if(result.value){
+								window.location = "login"
+							}
+						});
+					</script>';
+                }
+            } else {
+                echo '<script type="text/javascript">
+						swal({
+							type: "error",
+                            title: "¡El Correo y la contraseña no debe estar vacíos!",
+                            text: "Ambos tiene que estar en el formato correcto",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+						}).then((result)=>{
+							if(result.value){
+								window.location = "login"
+							}
+						});
+					</script>';
+            }
+
+        }
+    }
     public function dashboard()
     {
-        require_once 'views/admin/bars.php';
-        require_once 'views/admin/dashboard.php';
-        require_once 'views/admin/footer.php';
-        require_once 'views/admin/scripts.php';
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            header('Location: login');
+            die();
+        }else{
+            require_once 'views/admin/bars.php';
+            require_once 'views/admin/dashboard.php';
+            require_once 'views/admin/footer.php';
+            require_once 'views/admin/scripts.php';
+        }
     }
     public function publish()
     {        
-        require_once 'views/admin/bars.php';
-        require_once 'views/admin/publish.php';
-        require_once 'views/admin/footer.php';
-        require_once 'views/admin/scripts.php';
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            header('Location: login');
+            die();
+        }else{
+            require_once 'views/admin/bars.php';
+            require_once 'views/admin/publish.php';
+            require_once 'views/admin/footer.php';
+            require_once 'views/admin/scripts.php';
+        }
     }
     // SECCIÓN DE FORMULARIO PARA PUBLICAR
     public function crearNoticia()

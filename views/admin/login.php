@@ -15,21 +15,23 @@
     <link href="assets/admin/css/style.css" rel="stylesheet">
     <!-- TEMA PRINCIPAL -->
     <link href="assets/admin/css/colorTheme.css" id="theme" rel="stylesheet">
+    <!-- SWEET ALERT -->
+    <script src="assets/plugins/sweetalert2/sweetalert2.all.js"></script>
 </head>
 <body>
     <section id="wrapper">
         <div class="login-register" style="background-image:url(assets/images/background/login-register.jpg);">        
             <div class="login-box card">
             <div class="card-body">
-                <form class="form-horizontal form-material" id="loginform" action="index.html">
+                <form method="POST" class="form-horizontal form-material" id="loginform">
                     <h3 class="box-title m-b-20 text-center">Login SEPAR</h3>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" required="" placeholder="Usuario"> </div>
+                            <input name="userEmail" class="form-control" type="text" required="" placeholder="Usuario"> </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" required="" placeholder="Contraseña"> </div>
+                            <input name="password" class="form-control" type="password" required="" placeholder="Contraseña"> </div>
                     </div>
                     <!-- <div class="form-group">
                         <div class="col-md-12">
@@ -40,7 +42,7 @@
                     </div> -->
                     <div class="form-group mt-3 text-center m-t-20">
                         <div class="col-xs-12">
-                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Ingresar</button>
+                            <button name="ingresar" class="btn btn-themecolor btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Ingresar</button>
                         </div>
                     </div>
                     <!-- <div class="row">
@@ -57,6 +59,9 @@
                         </div>
                     </div> -->
                 </form>
+                <?php
+                    $this->signIn();
+                ?>
             </div>
           </div>
         </div>
