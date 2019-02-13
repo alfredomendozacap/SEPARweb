@@ -146,15 +146,15 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">PRINCIPAL</li>
-                        <li class="active"> <a class=" waves-effect waves-dark active" href="?page=main" target="_blank"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Inicio </span></a>
+                        <li class="active"> <a class=" waves-effect waves-dark active" href="main" target="_blank"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Inicio </span></a>
                         </li>
                         <li class="active"> <a class=" waves-effect waves-dark active" href="?page=dashboard"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
                         </li>
                         <li class="nav-devider"></li>
                         <li class="active"> <a class=" waves-effect waves-dark active" href="publicar-noticia"><i class="mdi mdi-newspaper"></i><span class="hide-menu">Nueva Noticia </span></a>
                         </li>
-                        
-                         
+                        <li class="active"> <a class=" waves-effect waves-dark active" href="registro"><i class="mdi mdi-account-key"></i><span class="hide-menu">Registro de Admins </span></a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

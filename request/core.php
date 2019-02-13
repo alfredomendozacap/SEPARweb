@@ -23,6 +23,7 @@ class Core{
 			'contacto' => array('view' => 'contacto', 'controller' => 'ContactoController'),
 			'login' => array('view' => 'login', 'controller' => 'AdminController'),
 			'logout' => array('view' => 'logout', 'controller' => 'AdminController'),
+			'registro' => array('view' => 'register', 'controller' => 'AdminController'),
 			'dashboard' => array('model' => 'Admin','view' => 'dashboard', 'controller' => 'AdminController'),
 			'publicar-noticia' => array('model' => 'Admin','view' => 'publish', 'controller' => 'AdminController')
 		);

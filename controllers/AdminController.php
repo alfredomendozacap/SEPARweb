@@ -10,6 +10,19 @@
  */
 class AdminController
 {
+    public function register()
+    {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            header('Location: login');
+            die();
+        }else{
+            require_once 'views/admin/bars.php';
+            require_once "views/admin/register.php"; 
+            require_once 'views/admin/footer.php';
+            require_once 'views/admin/scripts.php';
+        }
+    }
     public function login()
     {
         session_start();
