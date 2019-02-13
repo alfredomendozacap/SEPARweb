@@ -38,26 +38,12 @@
                 </div>
 
                 <!-- *******FORMULARIO DE CONTACTO******* -->
-                <div class="formulario col-lg-5">
-                    <div class="contenedor-formulario mt-5">
-                        <div class="contacto text-center mx-auto">
-                            <h3>Contactanos</h3>
-                        </div>
-                        <div class="contenedor-form">
-                            <form action="">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" name="nombre">
-
-                                <label for="email">E-mail:</label>
-                                <input type="email" name="nombre">
-
-                                <label for="mensaje">Mensaje:</label>
-                                <textarea name="mensaje" cols="30" rows="10"></textarea>
-
-                                <input class="btn btn-success px-4 mt-3" type="submit" value="Enviar">
-                            </form>
-                        </div>
-                    </div>
+                <div class="logo col-lg-5 my-2 text-center">
+                    <img src="assets/view/img/main/icons/LogoSepar.png" alt="" width="250">
+                    <p>Separ es una propuesta abierta a los cambios,no esquemática ni de paradigmas cerrados, orientada
+                        al fortaleximiento de la institucionalidad local para la gestion del desarrollo sostenible,
+                        en cooperación con las fuentes solidarias, el Estadoo y la empresa privada
+                    </p>
                 </div>
                 <!-- *******FORMULARIO DE CONTACTO******* -->
 
