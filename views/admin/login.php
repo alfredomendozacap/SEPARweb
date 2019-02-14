@@ -19,6 +19,13 @@
     <script src="assets/plugins/sweetalert2/sweetalert2.all.js"></script>
 </head>
 <body>
+    <?php
+        if (empty($_SESSION['key'])) {
+            $_SESSION['key'] = bin2hex(random_bytes(32));
+        }
+        # Token
+        $csrf = hash_hmac('sha256', 'registro.php', $_SESSION['key']);
+    ?>
     <section id="wrapper">
         <div class="login-register" style="background-image:url(assets/images/background/login-register.jpg);">        
             <div class="login-box card">
@@ -33,31 +40,12 @@
                         <div class="col-xs-12">
                             <input name="password" class="form-control" type="password" required="" placeholder="Contraseña"> </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="checkbox checkbox-primary pull-left p-t-0">
-                                <input id="checkbox-signup" type="checkbox">
-                                <label for="checkbox-signup"> Recuérdame </label>
-                            </div> <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Olvidaste tu contraseña?</a> </div>
-                    </div> -->
                     <div class="form-group mt-3 text-center m-t-20">
                         <div class="col-xs-12">
                             <button name="ingresar" class="btn btn-themecolor btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Ingresar</button>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                            <div class="social">
-                                <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
-                                <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="form-group m-b-0">
-                        <div class="col-sm-12 text-center">
-                            <p>Don't have an account? <a href="register.html" class="text-info m-l-5"><b>Sign Up</b></a></p>
-                        </div>
-                    </div> -->
+                    <input type="hidden" name="csrf" value="<?php echo $csrf;?>">
                 </form>
                 <?php
                     $this->signIn();

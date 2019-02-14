@@ -9,11 +9,11 @@ class ModeloBase extends DB{
 		$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	}
-	public function insertNews($dataNews)
+	public function insertNews($dataNews,$tabla)
 	{
 		try {
 			$keys = array_keys($dataNews);
-			$query = "INSERT INTO noticias (".implode(',',$keys).") \n";
+			$query = "INSERT INTO ".$tabla." (".implode(',',$keys).") \n";
         	$query .= "VALUES (:".implode(', :',$keys).")";
 			$stmt = $this->db->prepare($query);
 
@@ -66,7 +66,7 @@ class ModeloBase extends DB{
 
 		
 	}
-	public function getSomeItem($tabla,$item,$condition,$getOne,$getFew,$getAll,$getAllRows)
+	public function getSomeItem($tabla,$item,$condition,$getOne,$getFew,$getAll,$getAllRows,$limit = "")
 	{
 
 		try {
@@ -84,6 +84,10 @@ class ModeloBase extends DB{
 				}else{
 					die('No cumple las condiciones');
 				}
+			}
+
+			if ($limit !== "") {
+				$query .= " ORDER BY id DESC LIMIT ".$limit;
 			}
 
 			$stmt = $this->db->prepare($query);

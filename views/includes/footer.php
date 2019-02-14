@@ -39,7 +39,7 @@
 
                 <!-- *******FORMULARIO DE CONTACTO******* -->
                 <div class="logo col-lg-5 my-2 text-center">
-                    <img src="assets/view/img/main/icons/LogoSepar.png" alt="" width="250">
+                    <img src="<?php echo $pathResource?>view/img/main/icons/LogoSepar.png" alt="" width="250">
                     <p>Separ es una propuesta abierta a los cambios,no esquemática ni de paradigmas cerrados, orientada
                         al fortaleximiento de la institucionalidad local para la gestion del desarrollo sostenible,
                         en cooperación con las fuentes solidarias, el Estadoo y la empresa privada

@@ -10,7 +10,7 @@ class Main extends ModeloBase{
 	public static function getAllNews()
 	{
 		$db = new ModeloBase;
-		$respuesta = $db->getSomeItem('noticias','*','',false,false,false,true);
+		$respuesta = $db->getSomeItem('noticias','*','',false,false,false,true,"10");
 		return $respuesta;
 	}
 	public static function getMainImage($id,$relevance)

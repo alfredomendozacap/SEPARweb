@@ -34,7 +34,7 @@ class News extends ModeloBase{
             $this->slug
         ));
         $db = new ModeloBase();
-        $respuesta = $db -> insertNews($dataNews);
+        $respuesta = $db -> insertNews($dataNews,'noticias');
         return $respuesta;
     }
     public function getId()
@@ -49,6 +49,11 @@ class News extends ModeloBase{
         $respuesta = $db -> getSomeItem('noticias','*',array('title',$this->title),false,false,true,false);
         return $respuesta;
     }
-
+    public static function getAllNews()
+	{
+		$db = new ModeloBase;
+		$respuesta = $db->getSomeItem('noticias','*','',false,false,false,true,"5");
+		return $respuesta;
+	}
 
 }

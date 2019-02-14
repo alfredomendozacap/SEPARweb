@@ -29,3 +29,11 @@ function encriptar($input, $rounds = 10)
     ];
     return password_hash($input, PASSWORD_BCRYPT, $crypt_options);
 }
+
+/*==============================================
+=          FUNCION PARA LIMITAR TEXTO          =
+==============================================*/
+function limitarTexto($texto, $limite){
+    $texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '...';
+    return $texto;
+}

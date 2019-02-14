@@ -13,7 +13,7 @@ class Administrator extends ModeloBase
     function __construct()
     {
         parent::__construct();
-        $this->rol = array('superior','secundario');
+        $this->rol = 'secundario';
     }
 
     public function setAdmin($item,$value){
@@ -30,5 +30,24 @@ class Administrator extends ModeloBase
         $respuesta = $db -> getSomeItem('administrator','*',['email',$this->email],false,false,true,false);
         return $respuesta;
     }
+    public function newAdmin()
+    {
+        $dataAdmin = [
+            'first_name' => $this -> getAdmin('first_name'),
+            'last_name' => $this -> getAdmin('last_name'),
+            'password' => $this -> getAdmin('password'),
+            'email' => $this -> getAdmin('email'),
+            'rol' => $this -> getAdmin('rol')
+        ];
 
+        $db = new ModeloBase();
+        $respuesta = $db -> insertNews($dataAdmin,'administrator');
+        return $respuesta;
+    }
+    public function getAllAdmins()
+    {
+        $db = new ModeloBase();
+        $respuesta = $db -> getSomeItem('administrator','*','',false,false,false,true);
+        return $respuesta;
+    }
 }

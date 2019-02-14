@@ -10,6 +10,7 @@
  */
 class AdminController
 {
+    // SECCIÓN DE REGISTRO
     public function register()
     {
         session_start();
@@ -23,6 +24,102 @@ class AdminController
             require_once 'views/admin/scripts.php';
         }
     }
+    public function signUp()
+    {
+        if (isset($_POST['registrar'])) {
+
+            $first_name = isset($_POST['first_name']) ? ValidarCampo($_POST['first_name']) : '';
+            $last_name = isset($_POST['last_name']) ? ValidarCampo($_POST['last_name']) : '';
+            $email = isset($_POST['email']) ? ValidarCampo($_POST['email']) : '';
+            $password = isset($_POST['password']) ? ValidarCampo($_POST['password']) : '';
+
+            if (preg_match('/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/', $email)
+                && preg_match('/^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]*$/',$first_name)
+                && preg_match('/^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]*$/',$last_name)) {
+
+                $newAdmin = new Administrator();
+                $newAdmin -> setAdmin('first_name',$first_name);
+                $newAdmin -> setAdmin('last_name',$last_name);
+                $newAdmin -> setAdmin('password',encriptar($password));
+                $newAdmin -> setAdmin('email',$email);
+                $respuesta = $newAdmin -> getCredentials(); 
+
+                if ($email !== $respuesta['email']) {
+                    $rpta = $newAdmin->newAdmin();
+                    if ($rpta) {
+                        echo '<script type="text/javascript">
+                                swal({
+                                    type: "success",
+                                    title: "¡El Administrador se ha creado Correctamente!",
+                                    showConfirmButton: true,
+                                    confirmButtonText: "Cerrar",
+                                    closeOnConfirm: false
+                                }).then((result)=>{
+                                    if(result.value){
+                                        window.location = "registro"
+                                    }
+                                });
+                            </script>';
+                    } else {
+                        echo '<script type="text/javascript">
+                            swal({
+                                type: "error",
+                                title: "¡No se registro al Administrador!",
+                                text: "Algo salió mal",
+                                showConfirmButton: true,
+                                confirmButtonText: "Cerrar",
+                                closeOnConfirm: false
+                            }).then((result)=>{
+                                if(result.value){
+                                    window.location = "registro"
+                                }
+                            });
+                        </script>';
+                    }
+                } else {
+                    echo '<script type="text/javascript">
+						swal({
+							type: "error",
+                            title: "¡Este correo ya fue registrado!",
+                            text: "Ingrese nuevos datos",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+						}).then((result)=>{
+							if(result.value){
+								window.location = "registro"
+							}
+						});
+					</script>';
+                }
+                
+                
+            } else {
+                echo '<script type="text/javascript">
+						swal({
+							type: "error",
+                            title: "¡Los campos no deben estar vacíos!",
+                            text: "Todos tienen que estar en el formato correcto",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+						}).then((result)=>{
+							if(result.value){
+								window.location = "registro"
+							}
+						});
+					</script>';
+            }
+
+        }
+    }
+    public function obtenerAdmins()
+    {
+        $admins = new Administrator();
+        $rpta = $admins -> getAllAdmins();
+        return $rpta;
+    }
+    // SECCIÓN LOGIN
     public function login()
     {
         session_start();
@@ -39,59 +136,77 @@ class AdminController
     {
         if (isset($_POST['ingresar'])) {
 
-            $userEmail = isset($_POST['userEmail']) ? ValidarCampo($_POST['userEmail']) : '';
-            $password = isset($_POST['password']) ? ValidarCampo($_POST['password']) : '';
-
-            if (preg_match('/^[^0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $userEmail)) {
-
-                $credencial = new Administrator();
-                $credencial -> setAdmin('email',$userEmail);
-                $respuesta = $credencial -> getCredentials(); 
-                
-                if (password_verify($password,$respuesta['password']) && $userEmail == $respuesta['email']) {
-                    echo '<div class="alert alert-success text-center">
-							Bienvenido al Dashboard.
-							</div>';
-                    session_start();
-                    $_SESSION['nombre'] = $respuesta['first_name'];
-                    $_SESSION['apellido'] = $respuesta['last_name'];
-                    $_SESSION['email'] = $respuesta['email'];
-                    $_SESSION['rol'] = $respuesta['rol'];
-                    header('Location: dashboard');
-                    die();
-                }else{
-                    // $_SESSION['error'] = "Usuario y contraseña";
-                    // header('Location: login');
+            if (isset($_POST['csrf'])) {
+                $userEmail = isset($_POST['userEmail']) ? ValidarCampo($_POST['userEmail']) : '';
+                $password = isset($_POST['password']) ? ValidarCampo($_POST['password']) : '';
+    
+                if (preg_match('/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/', $userEmail)) {
+    
+                    $credencial = new Administrator();
+                    $credencial -> setAdmin('email',$userEmail);
+                    $respuesta = $credencial -> getCredentials(); 
+                    
+                    if (password_verify($password,$respuesta['password']) && $userEmail == $respuesta['email']) {
+                        echo '<div class="alert alert-success text-center">
+                                Bienvenido al Dashboard.
+                                </div>';
+                        session_start();
+                        $_SESSION['nombre'] = $respuesta['first_name'];
+                        $_SESSION['apellido'] = $respuesta['last_name'];
+                        $_SESSION['email'] = $respuesta['email'];
+                        $_SESSION['rol'] = $respuesta['rol'];
+                        header('Location: dashboard');
+                        die();
+                    }else{
+                        // $_SESSION['error'] = "Usuario y contraseña";
+                        // header('Location: login');
+                        echo '<script type="text/javascript">
+                            swal({
+                                type: "error",
+                                title: "¡El correo o la contraseña son incorrectos!",
+                                showConfirmButton: true,
+                                confirmButtonText: "Cerrar",
+                                closeOnConfirm: false
+                            }).then((result)=>{
+                                if(result.value){
+                                    window.location = "login"
+                                }
+                            });
+                        </script>';
+                    }
+                } else {
                     echo '<script type="text/javascript">
-						swal({
-							type: "error",
-							title: "¡El correo o la contraseña son incorrectos!",
-							showConfirmButton: true,
-							confirmButtonText: "Cerrar",
-							closeOnConfirm: false
-						}).then((result)=>{
-							if(result.value){
-								window.location = "login"
-							}
-						});
-					</script>';
+                            swal({
+                                type: "error",
+                                title: "¡El Correo y la contraseña no debe estar vacíos!",
+                                text: "Ambos tiene que estar en el formato correcto",
+                                showConfirmButton: true,
+                                confirmButtonText: "Cerrar",
+                                closeOnConfirm: false
+                            }).then((result)=>{
+                                if(result.value){
+                                    window.location = "login"
+                                }
+                            });
+                        </script>';
                 }
             } else {
                 echo '<script type="text/javascript">
-						swal({
-							type: "error",
-                            title: "¡El Correo y la contraseña no debe estar vacíos!",
-                            text: "Ambos tiene que estar en el formato correcto",
-							showConfirmButton: true,
-							confirmButtonText: "Cerrar",
-							closeOnConfirm: false
-						}).then((result)=>{
-							if(result.value){
-								window.location = "login"
-							}
-						});
-					</script>';
+                            swal({
+                                type: "error",
+                                title: "¡Upss!",
+                                text: "Algo salio mal",
+                                showConfirmButton: true,
+                                confirmButtonText: "Cerrar",
+                                closeOnConfirm: false
+                            }).then((result)=>{
+                                if(result.value){
+                                    window.location = "login"
+                                }
+                            });
+                        </script>';
             }
+
 
         }
     }
@@ -108,6 +223,13 @@ class AdminController
             require_once 'views/admin/scripts.php';
         }
     }
+    public function obtenerNoticias()
+    {
+        $news = new News();
+        $noticias = $news -> getAllNews();
+        return $noticias;
+    }
+    // SECCIÓN DE FORMULARIO PARA PUBLICAR
     public function publish()
     {        
         session_start();
@@ -121,7 +243,6 @@ class AdminController
             require_once 'views/admin/scripts.php';
         }
     }
-    // SECCIÓN DE FORMULARIO PARA PUBLICAR
     public function crearNoticia()
     {
         if (isset($_POST['submit'])) {
@@ -194,7 +315,7 @@ class AdminController
                                     closeOnConfirm: false
                                 }).then((result)=>{
                                     if(result.value){
-                                        window.location = "?page=publish"
+                                        window.location = "publicar-noticia"
                                     }
                                 });
                             </script>';
@@ -209,7 +330,7 @@ class AdminController
                                 closeOnConfirm: false
                             }).then((result)=>{
                                 if(result.value){
-                                    window.location = "?page=publish"
+                                    window.location = "publicar-noticia"
                                 }
                             });
                         </script>';
@@ -224,7 +345,7 @@ class AdminController
                                 closeOnConfirm: false
                             }).then((result)=>{
                                 if(result.value){
-                                    window.location = "?page=publish"
+                                    window.location = "publicar-noticia"
                                 }
                             });
                         </script>';

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Dashboard de SEPAR">
+    <meta name="author" content="SEPAR">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Dashboard</title>
@@ -38,13 +38,6 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <!-- <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -113,8 +106,6 @@
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-user"></i> Mi Perfil</a></li>
-                                    <li role="separator" class="divider"></li>
                                     <li><a href="logout"><i class="fa fa-power-off"></i> Salir</a></li>
                                 </ul>
                             </div>
@@ -148,13 +139,15 @@
                         <li class="nav-small-cap">PRINCIPAL</li>
                         <li class="active"> <a class=" waves-effect waves-dark active" href="main" target="_blank"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Inicio </span></a>
                         </li>
-                        <li class="active"> <a class=" waves-effect waves-dark active" href="?page=dashboard"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
+                        <li class="active"> <a class=" waves-effect waves-dark active" href="dashboard"><i class="mdi mdi-gauge"></i><span class="hide-menu">Noticias Publicadas </span></a>
                         </li>
                         <li class="nav-devider"></li>
                         <li class="active"> <a class=" waves-effect waves-dark active" href="publicar-noticia"><i class="mdi mdi-newspaper"></i><span class="hide-menu">Nueva Noticia </span></a>
                         </li>
+                        <?php if ($_SESSION['rol'] !== 'secundario'):?>
                         <li class="active"> <a class=" waves-effect waves-dark active" href="registro"><i class="mdi mdi-account-key"></i><span class="hide-menu">Registro de Admins </span></a>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -181,18 +174,4 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor">Publicar Noticia</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="?page=dashboard">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Publicar Noticia</li>
-                        </ol>
-                    </div>
-
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
+                
