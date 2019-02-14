@@ -39,10 +39,7 @@
                                     <small>No debe exceder de 255 caracteres.</small>
                                 </span>
                             </div>
-                            <div class="col-12 form-group">
-                                <label for="summary">Resumen</label>
-                                <textarea id="summary" name="summary" class="form-control" rows="3" require></textarea>
-                            </div>
+                            <input type="hidden" name="summary" value="Todo esta en el Content">
                             <div class="col-12 form-group">
                                 <label for="content">Contenido Principal</label>
                                 <textarea id="content" name="content" class="form-control" rows="3" require></textarea>

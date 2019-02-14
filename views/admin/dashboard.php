@@ -9,7 +9,6 @@
                 <li class="breadcrumb-item active">Noticias Publicadas</li>
             </ol>
         </div>
-
     </div>
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
@@ -22,6 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <h3 class="text-danger"><b>Noticias</b> Publicadas Recientemente</h3>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>

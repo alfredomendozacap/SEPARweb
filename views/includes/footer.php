@@ -62,8 +62,10 @@
                     <i class="fab fa-whatsapp"></i>
                 </div>
             </div>
+            <div class="text-center text-muted text-white">
+                <p class="my-0 py-3">&copy; Todos los Derechos Reservados SEPAR <?php echo date('Y'); ?></p>
+            </div>
         </div>
         <!-- *******FOOTER INFERIOR******* -->
-
     </footer>
     <!-- ------------- FOOTER -------------  -->

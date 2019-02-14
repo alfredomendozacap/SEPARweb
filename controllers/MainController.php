@@ -1,5 +1,7 @@
 <?php
 require_once 'models/Main.php';
+require_once 'helpers/helps.php';
+
 class MainController
 {
 
