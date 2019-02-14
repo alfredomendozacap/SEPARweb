@@ -38,19 +38,23 @@
                             <tbody>
                             <?php
                                 $noticias = $this->obtenerNoticias();
-                                foreach ($noticias as $key => $news) {
-                                    $contenido = limitartexto($news['content'],50);
-                                    $indice = $key + 1;
-                                    $noticia = <<<NEWS
-                                    <tr>
-                                        <td>{$indice}</td>
-                                        <td style="font-weight: bold;"><a href="news/{$news['slug']}" target="_blank">{$news['title']}</a></td>
-                                        <td>{$news['subtitle']}</td>
-                                        <td>{$contenido}</td>
-                                        <td><span class="text-muted"><i class="fa fa-clock-o"></i> {$news['created_at']}</span> </td>
-                                    </tr>
+                                if (!$noticias) {
+                                    echo '<div class="news__alert alert alert-danger text-center">NO SE HAN CREADO NOTICIAS</div>';
+                                } else {
+                                    foreach ($noticias as $key => $news) {
+                                        $contenido = limitartexto($news['content'],50);
+                                        $indice = $key + 1;
+                                        $noticia = <<<NEWS
+                                        <tr>
+                                            <td>{$indice}</td>
+                                            <td style="font-weight: bold;"><a href="news/{$news['slug']}" target="_blank">{$news['title']}</a></td>
+                                            <td>{$news['subtitle']}</td>
+                                            <td>{$contenido}</td>
+                                            <td><span class="text-muted"><i class="fa fa-clock-o"></i> {$news['created_at']}</span> </td>
+                                        </tr>
 NEWS;
-                                    echo $noticia;
+                                        echo $noticia;
+                                    }
                                 }
                             ?>
                             </tbody>

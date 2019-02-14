@@ -62,7 +62,7 @@
                     <i class="fab fa-whatsapp"></i>
                 </div>
             </div>
-            <div class="text-center text-muted text-white">
+            <div class="text-center text-muted text-white" style="background: rgba(0,0,0,.4);">
                 <p class="my-0 py-3">&copy; Todos los Derechos Reservados SEPAR <?php echo date('Y'); ?></p>
             </div>
         </div>
