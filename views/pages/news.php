@@ -11,26 +11,30 @@
                 }else{
                   $cImages = $this->mostrarImagenes($showInfo['id'],'c');
                   $secondaryImages = '';
-                  for ($i = 0; $i < count($cImages); $i++) {
-                    $secondaryImages .= '
-                        <div class="img-secondary carousel-item'.(($i == 0) ? ' active' : '' ).'" data-toggle="modal" data-target="#modal_'.$i.'">
-                            <img src="../coverPage/'.$showInfo['slug'].'/'.$cImages[$i]['image'].'" class="img__carousel d-block w-100 h-100" alt="'.$cImages[$i]['image'].'">
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modal_'.$i.'" tabindex="-1" role="dialog" aria-labelledby="modalLabel_'.$i.'" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                              <div class="modal-body d-flex justify-content-center align-items-center">
-                                  <img src="../coverPage/'.$showInfo['slug'].'/'.$cImages[$i]['image'].'" class="img-fluid" alt="'.$cImages[$i]['image'].'">
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  if (!$cImages) {
+                    $secondaryImages = '<div class="news__alert alert alert-info text-center">No se agregaron más imágenes</div>';
+                  } else {
+                    for ($i = 0; $i < count($cImages); $i++) {
+                      $secondaryImages .= '
+                          <div class="img-secondary carousel-item'.(($i == 0) ? ' active' : '' ).'" data-toggle="modal" data-target="#modal_'.$i.'">
+                              <img src="../coverPage/'.$showInfo['slug'].'/'.$cImages[$i]['image'].'" class="img__carousel d-block w-100 h-100" alt="'.$cImages[$i]['image'].'">
+                          </div>
+                          <!-- Modal -->
+                          <div class="modal fade" id="modal_'.$i.'" tabindex="-1" role="dialog" aria-labelledby="modalLabel_'.$i.'" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                              <div class="modal-content">
+                                <div class="modal-body d-flex justify-content-center align-items-center">
+                                    <img src="../coverPage/'.$showInfo['slug'].'/'.$cImages[$i]['image'].'" class="img-fluid" alt="'.$cImages[$i]['image'].'">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-
-                    ';
+  
+                      ';
+                    }
                   }
 
                   $pImage = $this->mostrarImagenes($showInfo['id'],'p');
